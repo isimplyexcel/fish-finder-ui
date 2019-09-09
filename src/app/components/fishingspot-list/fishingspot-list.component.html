@@ -1,0 +1,32 @@
+<h2>List of Fishing Spots</h2>
+
+<button mat-button color="primary" class="addBtn">
+  <a routerLink="/fishingspots/new">Add a Fishing Spot</a>
+</button>
+
+<mat-grid-list
+  cols="1"
+  rowHeight="1:1"
+  *ngFor="let fishingspot of fishingspots"
+>
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>{{ fishingspot.name }}</mat-card-title>
+    </mat-card-header>
+    <img
+      mat-card-image
+      src="{{ fishingspot.imageURL }}"
+      alt="{{ fishingspot.name }}"
+    />
+    <mat-card-content>
+      <p>
+        {{ fishingspot.body }}
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>Edit</button>
+      <button mat-button>Show</button>
+      <button mat-button>Delete</button>
+    </mat-card-actions>
+  </mat-card>
+</mat-grid-list>
