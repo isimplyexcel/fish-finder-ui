@@ -1,4 +1,41 @@
-<p>fishingspot-new works!</p>
+<p>Add new fishing spot</p>
+
+<form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+  <div>
+    <mat-form-field class="example-full-width">
+      <input
+        formControlName="name"
+        matInput
+        placeholder="Fishing Spot Name *"
+        id="name"
+      />
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-form-field class="example-full-width">
+      <input
+        formControlName="imageURL"
+        matInput
+        placeholder="ImageURL *"
+        id="name"
+      />
+    </mat-form-field>
+  </div>
+
+  <div>
+    <mat-form-field class="example-full-width">
+      <textarea
+        formControlName="body"
+        matInput
+        placeholder="Fishing Spot Description"
+      ></textarea>
+    </mat-form-field>
+  </div>
+  <button mat-button color="primary" class="submitBtn">
+    Submit
+  </button>
+</form>
 
 <button mat-button color="primary" class="backBtn">
   <a routerLink="/fishingspots">Back to all Fishing Spots</a>

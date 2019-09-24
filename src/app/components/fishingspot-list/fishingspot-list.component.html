@@ -4,11 +4,7 @@
   <a routerLink="/fishingspots/new">Add a Fishing Spot</a>
 </button>
 
-<mat-grid-list
-  cols="1"
-  rowHeight="1:1"
-  *ngFor="let fishingspot of fishingspots"
->
+<mat-grid-list cols="1" *ngFor="let fishingspot of fishingspots">
   <mat-card class="example-card">
     <mat-card-header>
       <mat-card-title>{{ fishingspot.name }}</mat-card-title>
