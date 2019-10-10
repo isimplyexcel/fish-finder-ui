@@ -2,7 +2,6 @@ import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { IFishingSpot } from "./interfaces/fishingspot";
 import { Observable } from "rxjs";
-import { userInfo } from "os";
 
 @Injectable({
   providedIn: "root"
