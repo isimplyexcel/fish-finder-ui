@@ -23,7 +23,13 @@
       <div class="button-row">
         <button mat-stroked-button color="accent">Edit</button>
         <button mat-stroked-button color="primary">Show</button>
-        <button mat-stroked-button color="warn">Delete</button>
+        <button
+          mat-stroked-button
+          color="warn"
+          (click)="deleteFishingSpot(fishingspot)"
+        >
+          Delete
+        </button>
       </div>
     </mat-card-actions>
   </mat-card>

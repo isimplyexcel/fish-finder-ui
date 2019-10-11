@@ -1,5 +1,5 @@
 export interface IFishingSpot {
-  id: string;
+  _id: string;
   name: string;
   imageURL: string;
   body: string;

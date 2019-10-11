@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpParams } from "@angular/common/http";
 import { IFishingSpot } from "./interfaces/fishingspot";
 import { Observable } from "rxjs";
 
@@ -10,25 +10,23 @@ export class FishingspotService {
   private _url: string = "http://dev.fishfinder.net:3002/fishingspot";
   constructor(private http: HttpClient) {}
 
-  baseUrl: string = "http://dev.fishfinder.net:3002/fishingspot";
-
   getFishingSpots(): Observable<IFishingSpot[]> {
     return this.http.get<IFishingSpot[]>(this._url);
   }
 
-  getFishingSpotById(id: number) {
-    return this.http.get<IFishingSpot>(this.baseUrl + "/" + id);
+  getFishingSpotById(id: string) {
+    return this.http.get<IFishingSpot>(this._url + "/" + id);
   }
 
   createFishingSpot(fishingSpot: IFishingSpot) {
-    return this.http.post(this.baseUrl, fishingSpot);
+    return this.http.post(this._url, fishingSpot);
   }
 
   updateFishingSpot(fishingSpot: IFishingSpot) {
-    return this.http.put(this.baseUrl + "/" + fishingSpot.id, fishingSpot);
+    return this.http.put(this._url + "/" + fishingSpot.id, fishingSpot);
   }
 
-  deleteFishingSpot(id: number) {
-    return this.http.delete(this.baseUrl + "/" + id);
+  deleteFishingSpot(id: string) {
+    return this.http.delete(this._url + "/" + id);
   }
 }
