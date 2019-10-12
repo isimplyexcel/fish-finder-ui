@@ -39,7 +39,9 @@ export class FishingspotListComponent implements OnInit {
 
   editFishingSpot(fishingspot: IFishingSpot): void {
     localStorage.removeItem("editFishingSpotId");
-    localStorage.setItem("editFishingSpotId", fishingspot.id.toString());
-    this.router.navigate["fishingspot-edit"];
+    localStorage.setItem("editFishingSpotId", fishingspot._id.toString());
+    let URL = "fishingspots/" + fishingspot._id + "/edit";
+    this.router.navigateByUrl(URL);
+    console.log(fishingspot._id);
   }
 }

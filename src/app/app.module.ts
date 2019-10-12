@@ -9,9 +9,10 @@ import { HttpClientModule } from "@angular/common/http";
 // material angular imports
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { MaterialModule } from "./material.module";
+import { FishingspotEditComponent } from './components/fishingspot-edit/fishingspot-edit.component';
 
 @NgModule({
-  declarations: [AppComponent, routingComponents],
+  declarations: [AppComponent, routingComponents, FishingspotEditComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
